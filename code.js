@@ -1,3 +1,3 @@
-function veryBadCode(a,b) {
-  return a+b;
+function veryBadCode(a, b) {
+  return a + b;
 }
