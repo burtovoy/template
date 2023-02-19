@@ -1,5 +1,3 @@
-import calculator from "./calc.js";
+import calculator from './calc';
 
-document.addEventListener("DOMContentLoaded", () => {
-  alert(calculator(1, 2));
-})
+alert(calculator(1, 2));
