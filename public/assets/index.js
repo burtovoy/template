@@ -1,3 +1,3 @@
 import calculator from './calc';
 
-alert(calculator(1, 2));
+alert(calculator(1, 3));
