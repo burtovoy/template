@@ -14,8 +14,8 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Lint Code Base
+      - name: npm install
         run: npm install
 
-      - name: Lint Code Base
+      - name: lint
         run: npm run lint
