@@ -1,6 +1,6 @@
 ## Создайте html файл
 Начнем того что создаем папку public. Далее в этой папке создадим обычный [html файл](https://github.com/burtovoy/template/blob/master/public/index.html)
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
