@@ -1,9 +1,8 @@
 # Создайте html файл
-Начнем с того, что создадим обычный [html файл](https://duckduckgo.com) <a href="/"></a> в папке public 
+Начнем того что создаем папку public. Далее в этой папке создадим обычный [html файл](https://github.com/burtovoy/template/blob/master/public/index.html)  
 
 # Создайте js файл и подключите его
-
-
+Рядом только что созданным html файл, создадим папку assets и создаим файл index.js. Подклюим этот файл в нашем html
 
 # Создайте первый модуль 
 # Создайте package.json
