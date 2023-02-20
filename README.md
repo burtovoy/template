@@ -4,6 +4,8 @@
 ## Создайте js файл и подключите его
 Рядом только что созданным html файл, создадим папку assets и создаим файл index.js. Подклюим этот файл в нашем html
 
+<script crossorigin src="/assets/index.js" type="module"></script>
+
 ## Создайте первый модуль 
 ## Создайте package.json
 ## Настроки модуля для package.json
