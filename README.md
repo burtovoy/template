@@ -31,33 +31,36 @@ export default function calculator(a, b) {
 }
 ```
 
-в файле index.js вызовите код. Теперь при подключении 
+в файле index.js вызовите код. 
 ```js
 import calculator from './calc.js';
 alert(calculator(1, 3));
 ```
+Так как файл index.js подключен в index.html, при открытие index.html сработает alert и выведет 4
 
 ## Создайте package.json
 С помощью команды
 ```
 npm init 
 ```
-создайте файл package.json
+создайте файл package.json. После этого мы сможем подключать разные модули для нашего проекта
 
-## Настроки модуля для package.json
+## Настройки модуля для package.json
 Добавьте 
 ```json
 "type": "module",
 ```
+чтобы использовать современную систему модулей в нашем проекте.
 
 ## Установите eslint 
 Далее установим 
 ```
 npm init @eslint/config
 ```
-ESLint статически анализирует ваш код, чтобы быстро найти проблемы.
+ESLint статически анализирует ваш код, чтобы найти проблемы со стилем кода.
+
 ## Пропишите настройки для eslint 
-В корне проекта создайте .eslintrc.json и пропишите в нем настройки. Настрйоки можно взять из (файла)[https://github.com/burtovoy/template/blob/master/.eslintrc.json], в настройки можно не вникать. Они созданы для этого проекта, для друго проекта могут быть другие настройки
+В корне проекта создайте .eslintrc.json и пропишите в нем настройки. Взять их можно из [файла](https://github.com/burtovoy/template/blob/master/.eslintrc.json), В настройки можно сильно не вникать. Они созданы для этого проекта, для другого проекта могут быть другие настройки.
 ## Подключите mocha 
 Установите mocha 
 ```
@@ -67,14 +70,30 @@ npm install --save-dev mocha
 ## Напишите первый тест 
 Создайте папку tests, в ней создате calc.test.js
 
-## Создайте комануду для запуска тестов
+```js
+import calc from '../public/assets/calc.js';
+
+describe('Функция калькулятор', function () {
+  it('перемножает 2 числа', function () {
+    const expectedResult = 8;
+    const result = calc(3, 5);
+    if (result !== expectedResult) {
+      throw new Error(`Expected ${expectedResult}, but got ${result}`);
+    }
+  });
+});
+```
+
+## Создайте комануду для запуска тестов и проверки кода
 ```json
   "scripts": {
     "test": "mocha ./tests/*.test.js",
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   ```
+Теперь команда npm run test запустит тесты, а команда npm run lint проверит код на стандарты стиля
 
-## Сделайте action github
-GitHub умеет выполнять задачи для вашего кода. Мы будем выполнять 2 задачи: запускать тесты и проверять стиль кода. 
-https://github.com/burtovoy/template/blob/master/.github/workflows/tasks.yml
+## Сделайте action для github
+GitHub умеет выполнять задачи для вашего кода. 
+Создайте [файл](https://github.com/burtovoy/template/blob/master/.github/workflows/tasks.yml) и github выполнит тесты и сделает провреку кода после каждой команды push или pr. 
+
