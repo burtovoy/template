@@ -1,3 +1,3 @@
-import calculator from './calc.js';
+import calc from './calc.js';
 
-alert(calculator(1, 3));
+alert(calc(1, 3));

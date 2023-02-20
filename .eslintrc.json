@@ -10,6 +10,13 @@
         "sourceType": "module"
     },
     "rules": {
+      "import/extensions": ["error", "ignorePackages", {"js": "always"}],
+      "prefer-arrow-callback": 0,
+      "mocha/prefer-arrow-callback": 2
     },
-    "extends": "airbnb"
+    "extends": ["airbnb", "plugin:mocha/recommended"],
+    "plugins": [
+      "mocha"
+    ]
+
 }

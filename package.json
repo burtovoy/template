@@ -1,10 +1,11 @@
 {
   "name": "actions-test",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "code.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./tests/*.test.js",
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "repository": {
@@ -19,6 +20,8 @@
   "homepage": "https://github.com/burtovoy/actions-test#readme",
   "devDependencies": {
     "eslint": "^8.34.0",
-    "eslint-config-airbnb": "^19.0.4"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-mocha": "^10.1.0",
+    "mocha": "^10.2.0"
   }
 }
