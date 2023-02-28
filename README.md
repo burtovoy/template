@@ -107,7 +107,7 @@ npx mocha test\*.test.js
 ## Создайте комануду для запуска тестов и проверки кода
 ```json
   "scripts": {
-    "test": "npx mocha test\*.test.js",
+    "test": "npx mocha tests",
     "lint": "npx eslint **.js"
   },
   ```
