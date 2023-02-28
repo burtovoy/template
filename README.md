@@ -120,3 +120,5 @@ GitHub умеет выполнять задачи для вашего кода.
 ## Ошибка Expected linebreaks to be 'LF' but found 'CRLF'
 Возникает на windows. Зайдите в настройки 
 
+File -> Preferences -> Settings. "eol" выставите в \r\n – затем создайте файлы заново (код можно просто скопировать)
+
