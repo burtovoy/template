@@ -79,7 +79,7 @@ npx eslint **.js
 Установите mocha и chai
 ```
 npm install --save-dev mocha
-npm i -S chai
+npm install --save-dev chai
 ```
 
 ## Напишите первый тест 
@@ -98,11 +98,17 @@ describe('Функция калькулятор', function () {
 });
 ```
 
+Запустите тесты 
+С помощью команды
+```
+npx mocha test\*.test.js
+```
+
 ## Создайте комануду для запуска тестов и проверки кода
 ```json
   "scripts": {
-    "test": "mocha ./tests/*.test.js",
-    "lint": "./node_modules/.bin/eslint **/*.js"
+    "test": "npx mocha test\*.test.js",
+    "lint": "npx eslint **.js"
   },
   ```
 Теперь команда npm run test запустит тесты, а команда npm run lint проверит код на стандарты стиля
