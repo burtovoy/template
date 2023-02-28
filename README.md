@@ -61,7 +61,7 @@ node_modules
 ## Установите eslint 
 Далее установим 
 ```
-npm init @eslint/config
+npm install --save-dev eslint
 ```
 ESLint статически анализирует ваш код, чтобы найти проблемы со стилем кода.
 
