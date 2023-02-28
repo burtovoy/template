@@ -62,6 +62,8 @@ node_modules
 Далее установим 
 ```
 npm install --save-dev eslint
+npm install --save-dev eslint-config-airbnb
+npm install --save-dev eslint-plugin-mocha
 ```
 ESLint статически анализирует ваш код, чтобы найти проблемы со стилем кода.
 
