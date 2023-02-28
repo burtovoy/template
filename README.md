@@ -59,7 +59,7 @@ node_modules
 ```
 
 ## Установите eslint 
-Далее установим 
+Далее установим и несколько модулей
 ```
 npm install --save-dev eslint
 npm install --save-dev eslint-config-airbnb
