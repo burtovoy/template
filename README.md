@@ -117,3 +117,6 @@ npx mocha tests
 GitHub умеет выполнять задачи для вашего кода. 
 Создайте [файл](https://github.com/burtovoy/template/blob/master/.github/workflows/tasks.yml) и github выполнит тесты и сделает провреку кода после каждой команды push или pr. 
 
+## Ошибка Expected linebreaks to be 'LF' but found 'CRLF'
+Возникает на windows. Зайдите в настройки 
+
