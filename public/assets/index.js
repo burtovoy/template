@@ -1,3 +1,3 @@
-import calc from './calc.js';
+import postSize from './post_size.js';
 
-alert(calc(1, 3));
+alert(postSize('Всем привет!'));

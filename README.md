@@ -1,42 +1,30 @@
-## Создайте html файл
-Начнем того что создаем папку public. Далее в этой папке создадим обычный [html файл](https://github.com/burtovoy/template/blob/master/public/index.html)
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Twitter</title>
-</head>
-<body>
-  <h1>Привет</h1>
-</body>
-</html>
-```
+## Что уже есть
+1. Вы создали в папке файл public/index.html
+2. Вы написали первый код на JavaScript в public/assets/post_size.js
+
 
 ## Создайте js файл и подключите его
-Рядом только что созданным html файл, создадим папку assets и создаим файл index.js. Подклюим этот файл в нашем html
+Cоздаим файл index.js в папке public/assets. Подклюим этот файл в нашем html
 
 ```html
 <script crossorigin src="/assets/index.js" type="module"></script>
 ```
 
-## Создайте первый модуль 
+## Вы уже создали первый модуль
 Также в папке assets создайте файл 
 
 ```js
-export default function calculator(a, b) {
-  return a + b;
+export default function postSize(post) {
+  return post.length;
 }
 ```
 
 в файле index.js вызовите код. 
 ```js
-import calculator from './calc.js';
-alert(calculator(1, 3));
+import postSize from './post_size.js';
+alert(postSize('Всем привет!'));
 ```
-Так как файл index.js подключен в index.html, при открытие index.html сработает alert и выведет 4
+Так как файл index.js подключен в index.html, при открытие index.html сработает alert и выведет результат
 
 ## Создайте package.json
 С помощью команды
@@ -78,14 +66,14 @@ npm i -S chai
 Создайте папку tests, в ней создате calc.test.js
 
 ```js
-import calc from '../public/assets/calc.js';
 import { assert } from 'chai';
+import postSize from '../public/assets/post_size.js';
 
-describe('Функция калькулятор', function () {
+describe('Функция проверки расчета размера поста', function () {
   it('перемножает 2 числа', function () {
-    const expectedResult = 8;
-    const result = calc(3, 5);
-    assert(expectedResult, result);
+    const expectedResult = 12;
+    const result = postSize('Всем привет!');
+    assert.equal(expectedResult, result);
   });
 });
 ```
