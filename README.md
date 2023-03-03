@@ -1,5 +1,5 @@
 ## Что уже есть
-1. Вы создали в папке файл public/index.html
+1. Вы создали файл public/index.html
 2. Вы написали первый код на JavaScript в public/assets/post_size.js
 
 
@@ -11,7 +11,7 @@ Cоздаим файл index.js в папке public/assets. Подклюим э
 ```
 
 ## Вы уже создали первый модуль
-Также в папке assets у вас файл с реализацией функйции postSize 
+Также в папке assets у вас уже есть файл с реализацией функйции postSize 
 
 ```js
 export default function postSize(post) {
@@ -78,16 +78,15 @@ import { assert } from 'chai';
 import postSize from '../public/assets/post_size.js';
 
 describe('Функция проверки расчета размера поста', function () {
-  it('перемножает 2 числа', function () {
-    const expectedResult = 8;
-    const result = calc(3, 5);
-    assert(expectedResult, result);
+  it('без ссылок', function () {
+    const expectedResult = 12;
+    const result = postSize('Всем привет!');
+    assert.equal(expectedResult, result);
   });
 });
 ```
 
-Запустите тесты 
-С помощью команды
+Запустите тесты с помощью команды (tests – это папка где лежат тесты)
 ```
 npx mocha tests
 ```
