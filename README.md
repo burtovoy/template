@@ -91,15 +91,6 @@ describe('Функция проверки расчета размера пост
 npx mocha tests
 ```
 
-## Создайте комануду для запуска тестов и проверки кода
-```json
-  "scripts": {
-    "test": "npx mocha tests",
-    "lint": "npx eslint ."
-  },
-  ```
-Теперь команда npm run test запустит тесты, а команда npm run lint проверит код на стандарты стиля
-
 ## Сделайте action для github
 GitHub умеет выполнять задачи для вашего кода. 
 Создайте [файл](https://github.com/burtovoy/template/blob/master/.github/workflows/tasks.yml) и github выполнит тесты и сделает провреку кода после каждой команды push или pr. 
