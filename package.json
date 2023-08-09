@@ -22,9 +22,7 @@
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-mocha": "^10.1.0",
-    "mocha": "^10.2.0"
-  },
-  "dependencies": {
+    "mocha": "^10.2.0",
     "chai": "^4.3.7"
   }
 }
