@@ -1,6 +1,8 @@
 ## Переименуйте 
 
-public\index.js -> public\main.js ->
+public\index.js -> public\main.js
+
+На самом деле можно оставить и public\index.js, но в дальнейшем 
 
 ## Установите express
 
@@ -32,4 +34,9 @@ node app.js
 ```
 
 ## Задеплойте
-Создайте на render.com веб-сервис(а не статический сайт)
+Создайте на render.com 
+
+1. Создайте новый Web Service
+2. В Build Command укажите npm install
+3. В Start Command укажите node app.js
+
