@@ -1,101 +1,35 @@
-## Что уже есть
-1. Вы создали файл public/index.html
-2. Вы написали первый код на JavaScript в public/assets/post_size.js
+## Переименуйте 
 
+public\index.js -> public\main.js ->
 
-## Создайте js файл и подключите его
-Cоздаим файл index.js в папке public/assets. Подклюим этот файл в нашем html
+## Установите express
 
-```html
-<script crossorigin src="/assets/index.js" type="module"></script>
+```
+npm install express --save
 ```
 
-## Вы уже создали первый модуль
-Также в папке assets у вас уже есть файл с реализацией функйции postSize 
+## Добавьте app.js
 
 ```js
-export default function postSize(post) {
-  return post.length;
-}
+import express from 'express';
+import fs from 'fs';
+
+const app = express()
+const port = 3000
+
+const html = fs.readFileSync('public/main.html', 'utf8');
+
+app.get('/', (req, res) => res.type('html').send(html));
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 ```
 
-в файле index.js вызовите код. 
-```js
-import postSize from './post_size.js';
-alert(postSize('Всем привет!'));
+## Запустите 
 ```
-Так как файл index.js подключен в index.html, при открытие index.html сработает alert и выведет результат
-
-## Создайте package.json
-С помощью команды
-```
-npm init 
-```
-создайте файл package.json. После этого мы сможем подключать разные модули для нашего проекта
-
-## Настройки модуля для package.json
-Добавьте 
-```json
-"type": "module",
-```
-чтобы использовать современную систему модулей в нашем проекте.
-
-## Создайте .gitignore 
-Чтобы папка node_modules не попала в репозиторий создайте файл .gitignore и поместите туда:
-```
-node_modules
+node app.js
 ```
 
-## Установите eslint 
-Далее установим и несколько модулей
-```
-npm install --save-dev eslint
-npm install --save-dev eslint-config-airbnb
-npm install --save-dev eslint-plugin-mocha
-```
-ESLint статически анализирует ваш код, чтобы найти проблемы со стилем кода.
-
-## Пропишите настройки для eslint 
-В корне проекта создайте .eslintrc.json и пропишите в нем настройки. Взять их можно из [файла](https://github.com/burtovoy/template/blob/master/.eslintrc.json), В настройки можно сильно не вникать. Они созданы для этого проекта, для другого проекта могут быть другие настройки.
-
-## Запустите команду проверки кода
-```
-npx eslint .
-```
-
-## Подключите mocha 
-Установите mocha и chai
-```
-npm install --save-dev mocha
-npm install --save-dev chai
-```
-
-## Напишите первый тест 
-Создайте папку tests, в ней создате calc.test.js
-
-```js
-import { assert } from 'chai';
-import postSize from '../public/assets/post_size.js';
-
-describe('Функция проверки расчета размера поста', function () {
-  it('без ссылок', function () {
-    const expectedResult = 12;
-    const result = postSize('Всем привет!');
-    assert.equal(expectedResult, result);
-  });
-});
-```
-
-Запустите тесты с помощью команды (tests – это папка где лежат тесты)
-```
-npx mocha tests
-```
-
-## Сделайте action для github
-GitHub умеет выполнять задачи для вашего кода. 
-Создайте [файл](https://github.com/burtovoy/template/blob/master/.github/workflows/tasks.yml) и github выполнит тесты и сделает провреку кода после каждой команды push или pr. 
-
-## Ошибка Expected linebreaks to be 'LF' but found 'CRLF'
-Возникает на windows. Зайдите в настройки 
-
-File -> Preferences -> Settings. "eol" выставите в \r\n – затем создайте файлы заново (код можно просто скопировать)
+## Задеплойте
+Создайте на render.com веб-сервис(а не статический сайт)
