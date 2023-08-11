@@ -12,4 +12,6 @@ npm install --save-dev eslint-plugin-react-hooks
 npm install --save-dev eslint-plugin-react-refresh
 ```
     
-  
+## Установите vite
+
+npm install -g vite
