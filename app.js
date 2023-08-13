@@ -5,10 +5,12 @@ const app = express();
 const port = 3000;
 
 const html = fs.readFileSync('public/main.html', 'utf8');
+const index = fs.readFileSync('public/index.html', 'utf8');
 
 app.use(express.static('public'));
 
 app.get('/', (req, res) => res.type('html').send(html));
+app.get('/app', (req, res) => res.type('html').send(index));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
